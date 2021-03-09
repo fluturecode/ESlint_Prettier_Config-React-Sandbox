@@ -2,7 +2,68 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## ESLingt Configuration
+
+1.) Remove pre-set ESlint configuration
+2.) yarn add eslint -D
+3.) npx eslint —init
+4.) add plugins: yarn add [ ] -D
+@typescript-eslint/eslint-plugin           
+@typescript-eslint/parser
+eslint-config-airbnb
+eslint-plugin-import
+eslint-plugin-jsx-a11y
+eslint-plugin-react
+eslint-plugin-react-hooks
+5.) edit .eslintrc.json
+Add this rule: "rules": {
+"no-use-before-define": "off",
+"@typescript-eslint/no-use-before-define": ["error"]
+},
+"react/jsx-filename-extension": [ "warn", {"extensions": [".tsx”]},]
+6.) yarn add eslint-import-resolver-typescript -D
+7.) add to .eslintrcjson
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
+8.) in rules  add to .eslintrcjson:
+    "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "ts": "never",
+                "tsx": "never"
+            }
+        ]
+9.) extends: "plugin:@typescript-eslint/recommended"
+10.)rules:    "no-shadow": "off",
+        "@typescript-eslint/no-shadow": ["error"]
+11.) rules: "@typescript-eslint/explicit-function-return-type": [
+"error",
+{
+"allowExpressions": true
+}
+]
+12.) "plugins": [
+…
+"react-hooks"
+],
+13.) "rules":{
+…
+"react-hooks/rules-of-hooks": "error",
+"react-hooks/exhaustive-deps": "warn"
+}
+14.) "rules":{
+…
+"import/prefer-default-export": "off"
+}
+15.)
+"rules":{
+…
+"react/prop-types": "off"
+}
+
 
 In the project directory, you can run:
 
